@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 20:59:27 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/09 22:28:33 by anda-cun         ###   ########.fr       */
+/*   Created: 2023/12/09 20:59:35 by anda-cun          #+#    #+#             */
+/*   Updated: 2023/12/09 21:06:45 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __SCAVTRAP_H__
+#define __SCAVTRAP_H__
 
-#ifndef __SCAVTRAP_HPP__
-#define __SCAVTRAP_HPP__
-
-#include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
-{
-    protected:
-    
-    public:
-        ScavTrap(void);
-        ScavTrap(std::string name);
-        ~ScavTrap(void);
-        void guardGate();
-};
+#include "ScavTrap.hpp"
 
 #endif
