@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 16:01:10 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/09 20:29:04 by anda-cun         ###   ########.fr       */
+/*   Created: 2023/12/09 20:59:35 by anda-cun          #+#    #+#             */
+/*   Updated: 2023/12/09 21:06:45 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.h"
+#ifndef __SCAVTRAP_H__
+#define __SCAVTRAP_H__
 
-int main(void)
-{
-    ClapTrap clap1("Guy1");
-    clap1.attack("Some dude");
-    clap1.takeDamage(9);
-    clap1.attack("Some dude");
-    clap1.beRepaired(1);
-    clap1.takeDamage(9);
-    clap1.attack("Some dude");
-    clap1.beRepaired(1);
-}
+#include "ScavTrap.hpp"
+
+#endif
