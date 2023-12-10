@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:59:27 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/09 22:28:33 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/10 23:31:49 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class ScavTrap : public ClapTrap
     public:
         ScavTrap(void);
         ScavTrap(std::string name);
+        ScavTrap(const ScavTrap & that);
+        ScavTrap &operator=(const ScavTrap & that);
         ~ScavTrap(void);
         void guardGate();
 };

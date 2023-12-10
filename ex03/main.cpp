@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 20:59:27 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/10 23:36:57 by anda-cun         ###   ########.fr       */
+/*   Created: 2023/12/09 16:01:10 by anda-cun          #+#    #+#             */
+/*   Updated: 2023/12/10 17:45:59 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// https://www.geeksforgeeks.org/multiple-inheritance-in-c/
 
-#ifndef __FRAGTRAP_HPP__
-#define __FRAGTRAP_HPP__
+#include "ClapTrap.h"
+#include "ScavTrap.h"
+#include "FragTrap.h"
+#include "DiamondTrap.h"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+int main(void)
 {
-    int _highFives;
-    public:
-        FragTrap(void);
-        FragTrap(std::string name);
-        FragTrap(const FragTrap & that);
-        FragTrap &operator=(const FragTrap & that);
-        ~FragTrap(void);
-        void highFivesGuys(void);
-};
-
-#endif
+    DiamondTrap diamond("diddy");
+    diamond.whoAmI();
+    diamond.attack("teste");
+}

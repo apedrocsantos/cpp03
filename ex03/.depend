@@ -1,0 +1,2 @@
+main.o: main.cpp ClapTrap.h ClapTrap.hpp ScavTrap.h ScavTrap.hpp \
+  FragTrap.h FragTrap.hpp DiamondTrap.h DiamondTrap.hpp
