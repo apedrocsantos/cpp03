@@ -1,22 +1,31 @@
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 
 NAME = ex01
 
-OBJS =	main.cpp\
-		ClapTrap.cpp\
-		ScavTrap.cpp\
+FILES =	ClapTrap\
+		ScavTrap\
+
+SRCS =	$(FILES:=.cpp) main.cpp
+
+OBJS = $(FILES:=.o) main.o
+
+HEADERS =	$(FILES:=.hpp) $(FILES:=.h)
 
 all: $(NAME)
 
-$(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $(NAME) -g
+$(NAME) : $(OBJS) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) -g
+
+$(OBJS) : $(SRCS)
+
 
 clean:
-	rm -f $(NAME)
+	rm -rf $(OBJS)
 
 fclean: clean
+	rm $(NAME)
 
 re: fclean all
 

@@ -4,30 +4,31 @@ CXXFLAGS = -Wall -Wextra -Werror -Wshadow -std=c++98
 
 NAME = ex03
 
-SRCS =	main.cpp\
-		ClapTrap.cpp\
-		ScavTrap.cpp\
-		FragTrap.cpp\
-		DiamondTrap.cpp\
+FILES =	ClapTrap\
+		ScavTrap\
+		FragTrap\
+		DiamondTrap\
+
+SRCS =	$(FILES:=.cpp) main.cpp
+
+OBJS = $(FILES:=.o) main.o
+
+HEADERS =	$(FILES:=.hpp) $(FILES:=.h)
 
 all: $(NAME)
 
-$(NAME) : $(SRCS)
-	$(CXX) $(CXXFLAGS) $^ -o $(NAME) -g
+$(NAME) : $(OBJS) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) -g
 
-depend: .depend
+$(OBJS) : $(SRCS)
 
-.depend: $(SRCS)
-	$(CXX) $(CXXFLAGS) -MM main.cpp -MF "$@"
-
--include .depend
 
 clean:
-	rm -f $(DEPS)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re depend
+.PHONY: all clean fclean re
