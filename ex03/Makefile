@@ -11,20 +11,14 @@ FILES =	ClapTrap\
 
 SRCS =	$(FILES:=.cpp) main.cpp
 
-OBJS = $(FILES:=.o) main.o
-
 HEADERS =	$(FILES:=.hpp) $(FILES:=.h)
 
 all: $(NAME)
 
-$(NAME) : $(OBJS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME) -g
-
-$(OBJS) : $(SRCS)
-
+$(NAME) : $(SRCS) $(HEADERS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME) -g
 
 clean:
-	rm -rf $(OBJS)
 
 fclean: clean
 	rm $(NAME)
