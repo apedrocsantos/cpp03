@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:01:10 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/12 14:37:22 by anda-cun         ###   ########.fr       */
+/*   Updated: 2023/12/12 17:49:25 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,6 @@ int main(void)
     DiamondTrap diamond("diddy");
     diamond.whoAmI();
     diamond.attack("teste");
+
+    ClapTrap a = DiamondTrap("TESTE");
 }
