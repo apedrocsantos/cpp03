@@ -21,4 +21,12 @@ int main(void)
 {
     ScavTrap scav("ScavTrap");
     scav.guardGate();
+    std::cout << "\n================> assignment operator\n\n";
+    ScavTrap scav2("Scav2");
+    scav2.set_values(0, 0, 0);
+    scav = scav2;
+    scav.get_values();
+    std::cout << "\n================> copy constructor\n\n";
+    ScavTrap scav3(scav2);
+    scav3.get_values();
 }

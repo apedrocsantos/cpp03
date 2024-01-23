@@ -12,14 +12,16 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
     this->_name = name;
-    std::cout << this->_name << " DiamondTrap named constructor called\n";
-    ClapTrap::_name = name + "_clap_name";
-    std::cout << FragTrap::_hit_points << " " << FragTrap::_energy_points << " " << FragTrap::_attack_damage << "\n";
-    std::cout << ScavTrap::_hit_points << " " << ScavTrap::_energy_points << " " << ScavTrap::_attack_damage << "\n";
-    std::cout << this->_hit_points << " " << this->_energy_points << " " << this->_attack_damage << "\n";
+    this->_hit_points = FragTrap::_hit_points;
+    this->_energy_points = ScavTrap::_energy_points;
+    this->_attack_damage = FragTrap::_attack_damage;
+    std::cout << this->_name << " DiamondTrap named constructor called with ";
+    // std::cout << FragTrap::_hit_points << " " << FragTrap::_energy_points << " " << FragTrap::_attack_damage << "\n";
+    // std::cout << ScavTrap::_hit_points << " " << ScavTrap::_energy_points << " " << ScavTrap::_attack_damage << "\n";
+    std::cout << this->_hit_points << " hps, " << this->_energy_points << " eps, " << this->_attack_damage << " ad.\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap & that) : ClapTrap(that), FragTrap(that), ScavTrap(that)

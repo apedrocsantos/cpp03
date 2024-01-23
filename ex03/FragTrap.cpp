@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void)
 {
-    std::cout << "Default constructor called\n";
+    std::cout << "FragTrap default constructor called\n";
     this->_hit_points = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
@@ -25,7 +25,7 @@ FragTrap::FragTrap(void)
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << this->_name << " constructor called\n";
+    std::cout << "FragTrap constructor called with address " << this << "\n";
     this->_hit_points = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;
@@ -34,14 +34,15 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     return;
 }
 
-FragTrap::FragTrap(const FragTrap & that)
+FragTrap::FragTrap(const FragTrap & that) : ClapTrap(that)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "FragTrap copy constructor called\n";
     *this = that;
 }
 
 FragTrap & FragTrap::operator=(const FragTrap & that)
 {
+    std::cout << "FragTrap assignment operator called\n";
     if (this != &that)
     {
         this->_attack_damage = that._attack_damage;
@@ -54,7 +55,7 @@ FragTrap & FragTrap::operator=(const FragTrap & that)
 
 FragTrap::~FragTrap(void)
 {
-    std::cout << this->_name << " destructor called\n";
+    std::cout << this->_name << " FragTrap destructor called\n";
     return;
 }
 

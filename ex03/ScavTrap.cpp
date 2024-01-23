@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:59:33 by anda-cun          #+#    #+#             */
-/*   Updated: 2024/01/23 07:14:11 by anda-cun         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:10:10 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 ScavTrap::ScavTrap(void)
 {
-    std::cout << "Child constructor called\n";
-    // this->_hit_points = 100;
-    // this->_energy_points = 50;
-    // this->_attack_damage = 20;
+    std::cout << "ScavTrap constructor called\n";
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     return;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "Child constructor called\n";
+    std::cout << "ScavTrap constructor called with address " << this << "\n";
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;
@@ -31,14 +31,15 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     return;
 }
 
-ScavTrap::ScavTrap(const ScavTrap & that)
+ScavTrap::ScavTrap(const ScavTrap & that) : ClapTrap(that)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ScavTrap copy constructor called\n";
     *this = that;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap & that)
 {
+    std::cout << "ScavTrap assignment operator called\n";
     if (this != &that)
     {
         this->_attack_damage = that._attack_damage;
@@ -51,7 +52,7 @@ ScavTrap & ScavTrap::operator=(const ScavTrap & that)
 
 ScavTrap::~ScavTrap(void)
 {
-    std::cout << "Child destructor called\n";
+    std::cout << this->_name << " ScavTrap destructor called\n";
     return;
 }
 

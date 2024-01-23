@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//https://www.programiz.com/cpp-programming/public-protected-private-inheritance
 
 #ifndef __SCAVTRAP_HPP__
 #define __SCAVTRAP_HPP__
