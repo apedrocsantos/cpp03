@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:01:01 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/12 16:58:44 by anda-cun         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:09:07 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 ClapTrap::ClapTrap(void)
 {
     std::cout << "Default ClapTrap constructor called" << std::endl;
+    this->_hit_points = 10;
+    this->_energy_points = 10;
+    this->_attack_damage = 0;
     return ;
 }
 

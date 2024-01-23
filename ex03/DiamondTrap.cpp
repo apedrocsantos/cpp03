@@ -6,39 +6,30 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:59:33 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/12 17:25:23 by anda-cun         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:23:22 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(), FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
 {
     this->_name = name;
     std::cout << this->_name << " DiamondTrap named constructor called\n";
     ClapTrap::_name = name + "_clap_name";
-    ClapTrap::_hit_points = 10;
-    ClapTrap::_energy_points = 10;
-    ClapTrap::_attack_damage = 0;
-    FragTrap::_hit_points = 100;
-    FragTrap::_energy_points = 100;
-    FragTrap::_attack_damage = 30;
-    ScavTrap::_hit_points = 100;
-    ScavTrap::_energy_points = 50;
-    ScavTrap::_attack_damage = 20;
-    this->_hit_points = ScavTrap::_hit_points;
-    this->_energy_points = ScavTrap::_energy_points;
-    this->_attack_damage = ScavTrap::_attack_damage;
+    std::cout << FragTrap::_hit_points << " " << FragTrap::_energy_points << " " << FragTrap::_attack_damage << "\n";
+    std::cout << ScavTrap::_hit_points << " " << ScavTrap::_energy_points << " " << ScavTrap::_attack_damage << "\n";
+    std::cout << this->_hit_points << " " << this->_energy_points << " " << this->_attack_damage << "\n";
 }
 
-// DiamondTrap::DiamondTrap(const DiamondTrap & that) : ClapTrap(that), ScavTrap(that), FragTrap(that)
-// {
-//     std::cout << "DiamondTrap copy constructor called\n";
-//     this->_name = that._name;
-//     this->_hit_points = FragTrap::_hit_points;
-//     this->_energy_points = ScavTrap::_energy_points;
-//     this->_attack_damage = FragTrap::_attack_damage;
-// }
+DiamondTrap::DiamondTrap(const DiamondTrap & that) : ClapTrap(that), FragTrap(that), ScavTrap(that)
+{
+    std::cout << "DiamondTrap copy constructor called\n";
+    this->_name = that._name;
+    this->_hit_points = FragTrap::_hit_points;
+    this->_energy_points = ScavTrap::_energy_points;
+    this->_attack_damage = FragTrap::_attack_damage;
+}
 
 DiamondTrap & DiamondTrap::operator=(const DiamondTrap & that)
 {

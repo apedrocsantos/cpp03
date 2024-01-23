@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:59:27 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/12 17:15:33 by anda-cun         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:26:46 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class ScavTrap : virtual public ClapTrap
         ScavTrap &operator=(const ScavTrap & that);
         ~ScavTrap(void);
         void guardGate();
-        void attack(const std::string & target);
 };
 
 #endif

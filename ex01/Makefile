@@ -9,7 +9,7 @@ FILES =	ClapTrap\
 
 SRCS =	$(FILES:=.cpp) main.cpp
 
-HEADERS =	$(FILES:=.hpp) $(FILES:=.h)
+HEADERS =	$(FILES:=.hpp)
 
 all: $(NAME)
 
@@ -17,6 +17,7 @@ $(NAME) : $(SRCS) $(HEADERS)
 	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME) -g
 
 clean:
+	rm -rf $(SRCS:cpp=o)
 
 fclean: clean
 	rm $(NAME)

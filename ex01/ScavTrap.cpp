@@ -6,7 +6,7 @@
 /*   By: anda-cun <anda-cun@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:59:33 by anda-cun          #+#    #+#             */
-/*   Updated: 2023/12/12 15:30:26 by anda-cun         ###   ########.fr       */
+/*   Updated: 2024/01/23 07:10:10 by anda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ScavTrap::ScavTrap(void)
 {
     std::cout << "Child constructor called\n";
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 20;
     return;
 }
 
