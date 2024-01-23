@@ -56,6 +56,20 @@ ScavTrap::~ScavTrap(void)
     return;
 }
 
+void ScavTrap::attack(const std::string & target)
+{
+    std::cout << "================> attacking\n";
+    if (this->_hit_points <= 0 || this->_energy_points <= 0)
+    {
+        std::cout << "Sorry, I'm too weak to attack... I have ";
+        std:: cout << this->_hit_points << " hit points and " << this->_energy_points << " energy points.\n";
+        return;
+    }
+    this->_energy_points--;
+    std::cout << "ScavTrap " << this->_name << " attacks " << target << " causing " << this->_attack_damage << " points of damage.\n";
+    std::cout << this->_hit_points << " hitpoints remaining, and " << this->_energy_points << " energy points remaining.\n";
+}
+
 void ScavTrap::guardGate(void)
 {
     std::cout << this->_name << " is now in Gate keeper mode.\n";

@@ -21,6 +21,8 @@ int main(void)
 {
     ScavTrap scav("scavvy");
     FragTrap frag("fraggy");
+    scav.attack("fraggy");
+    frag.attack("scavvy");
     scav.guardGate();
     frag.highFivesGuys();
     frag.highFivesGuys();

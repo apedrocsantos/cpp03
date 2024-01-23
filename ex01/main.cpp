@@ -19,7 +19,8 @@
 
 int main(void)
 {
-    ScavTrap scav("ScavTrap");
+    ScavTrap scav("Scavvy");
+    scav.attack("coiso");
     scav.guardGate();
     std::cout << "\n================> assignment operator\n\n";
     ScavTrap scav2("Scav2");
