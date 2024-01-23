@@ -24,10 +24,9 @@ int main(void)
     std::cout << "\n===============> whoAmI()\n";
     diamond.whoAmI();
     diamond.attack("teste");
+    std::cout << "\n===============> guardGate()\n";
+    diamond.guardGate();
     std::cout << "\n===============> highFivesGuys()\n";
     diamond.highFivesGuys();
-
-    // std::cout << "\nCopy assignment ==============>\n\n";
-    // ClapTrap a = DiamondTrap("TESTE");
     std::cout << "\nAll done ==============>\n";
 }

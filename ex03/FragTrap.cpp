@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void)
 {
-    std::cout << "FragTrap default constructor called\n";
+    std::cout << "FragTrap default constructor called with address " << this << "\n";
     this->_hit_points = 100;
     this->_energy_points = 100;
     this->_attack_damage = 30;

@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void)
 {
-    std::cout << "ScavTrap constructor called\n";
+    std::cout << "ScavTrap default constructor called\n";
     this->_hit_points = 100;
     this->_energy_points = 50;
     this->_attack_damage = 20;

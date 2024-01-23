@@ -12,21 +12,28 @@
 
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap(void) : ClapTrap(), FragTrap(), ScavTrap()
+{
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 30;
+    std::cout << "DiamondTrap default constructor called with address " << this << "\n";
+    std::cout << "Hey, I'm nobody, and I have " << this->_hit_points << " hit points, " << this->_energy_points << " energy points, " << this->_attack_damage << " attack damage.\n";
+}
+
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
     this->_name = name;
-    this->_hit_points = FragTrap::_hit_points;
-    this->_energy_points = ScavTrap::_energy_points;
-    this->_attack_damage = FragTrap::_attack_damage;
-    std::cout << this->_name << " DiamondTrap named constructor called with ";
-    // std::cout << FragTrap::_hit_points << " " << FragTrap::_energy_points << " " << FragTrap::_attack_damage << "\n";
-    // std::cout << ScavTrap::_hit_points << " " << ScavTrap::_energy_points << " " << ScavTrap::_attack_damage << "\n";
-    std::cout << this->_hit_points << " hps, " << this->_energy_points << " eps, " << this->_attack_damage << " ad.\n";
+    this->_hit_points = 100;
+    this->_energy_points = 50;
+    this->_attack_damage = 30;
+    std::cout << "DiamondTrap named constructor called with address " << this << "\n";
+    std::cout << "Hey, I'm " << this->_name << " and I have " << this->_hit_points << " hit points, " << this->_energy_points << " energy points, " << this->_attack_damage << " attack damage.\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap & that) : ClapTrap(that), FragTrap(that), ScavTrap(that)
 {
-    std::cout << "DiamondTrap copy constructor called\n";
+    std::cout << this->_name << " DiamondTrap copy constructor called\n";
     this->_name = that._name;
     this->_hit_points = FragTrap::_hit_points;
     this->_energy_points = ScavTrap::_energy_points;
