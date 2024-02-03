@@ -80,7 +80,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
     std::cout << "================> repairing\n";
     if (this->_hit_points <= 0 || this->_energy_points <= 0)
     {
-        std::cout << "Sorry, I'm too weak to repair... I have";
+        std::cout << "Sorry, I'm too weak to repair... I have ";
         std:: cout << this->_hit_points << " hit points and " << this->_energy_points << " energy points.\n";
         return;
     }

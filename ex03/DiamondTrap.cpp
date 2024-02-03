@@ -23,10 +23,13 @@ DiamondTrap::DiamondTrap(void)
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
+    FragTrap::_hit_points = 100;
+    ScavTrap::_energy_points = 50;
+    FragTrap::_attack_damage = 30;
     this->_name = name;
-    this->_hit_points = 100;
-    this->_energy_points = 50;
-    this->_attack_damage = 30;
+    this->FragTrap::_hit_points = 100;
+    this->ScavTrap::_energy_points = 50;
+    this->FragTrap::_attack_damage = 30;
     std::cout << "DiamondTrap named constructor called with address " << this << "\n";
     std::cout << "Hey, I'm " << this->_name << " and I have " << this->_hit_points << " hit points, " << this->_energy_points << " energy points, " << this->_attack_damage << " attack damage.\n";
 }
